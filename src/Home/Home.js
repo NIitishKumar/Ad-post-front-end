@@ -22,7 +22,7 @@ function Home() {
     try {
       await axios({
         method: "GET",
-        url: `http://localhost:9000/ad/${id}`,
+        url: `https://ad-post.herokuapp.com/ad/${id}`,
       }).then((res) => {
         setads(res.data.ads);
         console.log(res);
@@ -36,7 +36,7 @@ function Home() {
     try {
         await axios({
           method: "GET",
-          url: `http://localhost:9000/user/${id}`,
+          url: `https://ad-post.herokuapp.com/user/${id}`,
         }).then((res) => {
             setuser(res.data.user);
           console.log(res);

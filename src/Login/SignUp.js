@@ -31,7 +31,7 @@ function SignUp() {
       try{
         await axios({
             method:'POST',
-            url:'http://localhost:9000/user',
+            url:'https://ad-post.herokuapp.com/user',
             data:Values
         }).then((res)=>{
             if(res.status === 200){

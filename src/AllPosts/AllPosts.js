@@ -21,7 +21,7 @@ function AllPosts() {
     try {
       await axios({
         method: "GET",
-        url: `http://localhost:9000/ad/`,
+        url: `https://ad-post.herokuapp.com/ad/`,
       }).then((res) => {
         setads(res.data.ads);
         console.log(res);

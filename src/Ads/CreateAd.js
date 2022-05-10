@@ -39,7 +39,7 @@ function Ad() {
   
         await axios({
           method:"POST",
-          url:`http://localhost:9000/ad/${id}`,
+          url:`https://ad-post.herokuapp.com/ad/${id}`,
           data:{...Values,user:id}
         }).then(res => {
           console.log(res)
