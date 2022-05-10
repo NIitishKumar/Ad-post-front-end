@@ -101,7 +101,7 @@ function SignUp() {
                   label="Password"
                 />
               </FormControl>
-              <a href="/login">
+              <a href="/">
                 <span style={{ float: "right" }}> Already have account?</span>
               </a>
             </Grid>
