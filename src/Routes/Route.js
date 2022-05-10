@@ -11,7 +11,7 @@ export default function () {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />}></Route>
+        <Route path="/" element={<AllPosts />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/home/:id" element={<Home />}></Route>
