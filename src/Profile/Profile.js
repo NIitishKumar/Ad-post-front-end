@@ -72,7 +72,7 @@ function Profile() {
     try {
       await axios({
         method: "PUT",
-        url: `http://localhost:9000/user/${id}`,
+        url: `https://ad-post.herokuapp.com/user/${id}`,
         data: Values,
       }).then((res) => {
         if (res.status === 200) {
