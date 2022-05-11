@@ -33,6 +33,7 @@ function Login() {
             data:Values
         }).then((res)=>{
             if(res.status === 200){
+              window.localStorage.setItem('userMail',res.data.user.email)
                 navigate(`/home/${res.data.user._id}`)
             }else{
                 console.log('dsfsadds')
@@ -97,6 +98,19 @@ function Login() {
           </Grid>
         </Grid>
       </Grid>
+      <Typography variant="" ml={5} className="createAd">
+        <Button
+        onClick={() => navigate('/allPosts')}
+          disableElevation
+          fullWidth
+          size="large"
+          type="submit"
+          variant="contained"
+          color="secondary"
+        >
+          All Posts
+        </Button>
+      </Typography>
     </Box>
   );
 }

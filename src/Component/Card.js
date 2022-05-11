@@ -26,7 +26,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function ({email, name, data }) {
+export default function ({email,image, name, data }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -38,7 +38,13 @@ export default function ({email, name, data }) {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+            {
+              image 
+              ?
+              <img src={image} />
+              :
+              "I"
+            }
           </Avatar>
         }
         action={
@@ -49,12 +55,12 @@ export default function ({email, name, data }) {
         title={name}
         subheader={email}
       />
-      {/* <CardMedia
+      <CardMedia
         component="img"
         height="194"
-        image="/static/images/cards/paella.jpg"
+        image={(data?.image) ? data?.image : "https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2020%2F05%2F11%2F15%2F38%2Ftom-5158824_960_720.png&imgrefurl=https%3A%2F%2Fpixabay.com%2Fillustrations%2Ftom-jerry-cartoon-art-mickey-mouse-5158824%2F&tbnid=U4A_DSp3T1EIqM&vet=12ahUKEwjdxuL_ttT3AhWU_TgGHfnxBBEQMygFegUIARDiAQ..i&docid=obV8wILZjU_T4M&w=758&h=720&q=tom&ved=2ahUKEwjdxuL_ttT3AhWU_TgGHfnxBBEQMygFegUIARDiAQ"}
         alt="Paella dish"
-      /> */}
+      />
 
       <CardContent>
         <Typography variant="body2" color="text.secondary">
@@ -89,7 +95,7 @@ export default function ({email, name, data }) {
           aria-expanded={expanded}
           aria-label="show more"
         >
-          <ExpandMoreIcon />
+          {/* <ExpandMoreIcon /> */}
         </ExpandMore>
       </CardActions>
     </Card>

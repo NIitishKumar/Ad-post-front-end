@@ -40,6 +40,12 @@
 
 .createAd{
   position: absolute;
-  right: 10%;
+  right: 17%;
   top: 5%;
+}
+
+.profile{
+  position: absolute;
+  right: 10%;
+  top:5%
 }

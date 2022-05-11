@@ -35,6 +35,7 @@ function SignUp() {
             data:Values
         }).then((res)=>{
             if(res.status === 200){
+              window.localStorage.setItem('userMail',res.data.user.email)
                 navigate(`/home/${res.data.user._id}`)
             }
         })

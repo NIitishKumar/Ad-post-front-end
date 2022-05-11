@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../Component/Card";
 // material-ui
 import {
@@ -11,10 +11,13 @@ import {
   Box,
 } from "@mui/material";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import {useLocation} from 'react-router-dom'
 
 function AllPosts() {
-    
+
   const [ads, setads] = useState([]);
+  const navigate = useNavigate();
 
   //------> Get all ada
   const getAds = async () => {
@@ -35,8 +38,6 @@ function AllPosts() {
     getAds();
   }, [1]);
 
-
-
   return (
     <Box
       display={"flex"}
@@ -47,11 +48,31 @@ function AllPosts() {
     >
       {ads?.length > 0 ? (
         ads.map((x) => {
-          return <Card name={x.user?.name} email={x.user?.email ? x.user?.email :'unknown'} data={x} />;
+          return (
+            <Card
+              name={x.user?.name}
+              email={x.user?.email ? x.user?.email : "unknown"}
+              data={x}
+            />
+          );
         })
       ) : (
-        <h1>No Ads..</h1>
+        <h1>Loading..</h1>
       )}
+
+      <Typography variant="" ml={5} className="createAd">
+        <Button
+        onClick={() => navigate('/login')}
+          disableElevation
+          fullWidth
+          size="large"
+          type="submit"
+          variant="contained"
+          color="secondary"
+        >
+          Sign in
+        </Button>
+      </Typography>
     </Box>
   );
 }

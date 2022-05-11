@@ -13,6 +13,7 @@ import {useParams} from 'react-router-dom'
 import axios from "axios";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import {useNavigate} from 'react-router-dom'
+import { fileUpload } from "../Component/Upload";
 
 
 function Ad() {
@@ -51,8 +52,15 @@ function Ad() {
     }
   };
 
-  const handleChange = (e) => {
-    setValues({...Values, [e.target.name]:e.target.value})
+  const handleChange = async (e) => {
+    if(e.target.name === 'image'){
+      let {location} = await fileUpload(e.target.files[0])
+      if (location) {
+        setValues({...Values, [e.target.name]:location})
+      }
+    }else{
+      setValues({...Values, [e.target.name]:e.target.value})
+    }
   }
 
   return (
