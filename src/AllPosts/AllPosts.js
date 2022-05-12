@@ -16,6 +16,16 @@ import {useLocation} from 'react-router-dom'
 
 function AllPosts() {
 
+      // const navigate = useNavigate()
+      const location = useLocation()
+
+      useEffect(() => {
+        if (!window.localStorage.getItem('userMail')) {
+          // window.location.push('/')
+          // navigate('/login')
+        }
+      },[location])
+    
   const [ads, setads] = useState([]);
   const navigate = useNavigate();
 
