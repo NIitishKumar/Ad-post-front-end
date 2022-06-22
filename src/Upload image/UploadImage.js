@@ -23,7 +23,7 @@ function UploadImage() {
         async function imageFunc() {
           let data = await axios({
             method:'GET',
-            url:"http://localhost:9000/image",
+            url:"https://ad-post.herokuapp.com/image",
           })
           setImages(data.data.images)
         }
@@ -50,7 +50,7 @@ function UploadImage() {
         try {
             
         await axios({
-            url:'http://localhost:9000/image',
+            url:'https://ad-post.herokuapp.com/image',
             method:'post',
             data:formData
         })
@@ -64,7 +64,7 @@ function UploadImage() {
     const getImages = async () => {
       let data = await axios({
         method:'GET',
-        url:"http://localhost:9000/image",
+        url:"https://ad-post.herokuapp.com/image",
       })
       setImages(data.data.images)
 
@@ -107,13 +107,13 @@ function UploadImage() {
           </Grid>
         </Grid>
           </form>
-        {
+        {/* {
           images && images.map(x => {
             console.log(x)
             // const base64String = btoa(String.fromCharCode(...new Uint8Array(x.image.data)));
             return <img src={`http://localhost:9000/${x.image}`} alt="" height='50px' width='50px' />
           })
-        }
+        } */}
         {/* <img src ="http://localhost:9000/1655809965397.jpeg" /> */}
       </Box>
     </div>

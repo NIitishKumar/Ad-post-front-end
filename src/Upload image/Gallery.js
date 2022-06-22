@@ -58,7 +58,7 @@ export default function Gallery() {
 
                 <CardMedia
                   component="img"
-                  image={`http://localhost:9000/${x.image}`}
+                  image={`https://ad-post.herokuapp.com/${x.image}`}
                   alt="Paella dish"
                 />
           
