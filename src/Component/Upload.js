@@ -5,8 +5,8 @@ window.Buffer = window.Buffer || require("buffer").Buffer;
 
 function fileUpload(file) {
     const config = {
-        bucketName:"krida-buck",
-        region:"us-east-1",
+        bucketName:"nitish-bucket7098",
+        region:"ap-south-1",
         ACL: "public-read",
         secretAccessKey:"",
         accessKeyId:process.env.REACT_APP_ACCESS_KEY,

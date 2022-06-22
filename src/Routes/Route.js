@@ -6,6 +6,8 @@ import Home from '../Home/Home'
 import Profile from "../Profile/Profile";
 import Ad from "../Ads/CreateAd";
 import AllPosts from "../AllPosts/AllPosts";
+import UploadImage from "../Upload image/UploadImage";
+import Gallery from "../Upload image/Gallery";
 
 export default function () {
 
@@ -19,6 +21,8 @@ export default function () {
         <Route path="/profile/:id" element={<Profile />}></Route>
         <Route path="/:id" element={<Ad />}></Route>
         <Route path="/allposts" element={<AllPosts />}></Route>
+        <Route path='/image-upload' element={<UploadImage /> }></Route>
+        <Route path='/gallery' element={<Gallery />}></Route>
       </Routes>
     </Router>
   );
