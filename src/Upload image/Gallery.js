@@ -27,7 +27,7 @@ export default function Gallery() {
           async function imageFunc() {
             let data = await axios({
               method:'GET',
-              url:"http://localhost:9000/image",
+              url:"https://ad-post.herokuapp.com/image",
             })
             setImages(data.data.images)
           }
