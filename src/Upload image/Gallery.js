@@ -16,6 +16,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import axios from 'axios';
+import instance from '../helpers/Axios';
 
 export default function Gallery() {
 
@@ -25,10 +26,15 @@ export default function Gallery() {
     React.useEffect( () => {
         try {
           async function imageFunc() {
-            let data = await axios({
-              method:'GET',
-              url:"https://ad-post.herokuapp.com/image",
-            })
+              let data = await instance({
+                method:"GET",
+                url:"/image",
+              })
+              console.log(data)
+            // let data = await axios({
+            //   method:'GET',
+            //   url:"https://ad-post.herokuapp.com/image",
+            // })
             setImages(data.data.images)
           }
   

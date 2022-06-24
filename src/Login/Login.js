@@ -12,6 +12,8 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import {useNavigate} from 'react-router-dom'
+import { Authenticate } from "../helpers/isAuthenticated";
+import instance from "../helpers/Axios";
 
 function Login() {
 
@@ -27,13 +29,20 @@ function Login() {
 
   const handleSubmit = async () => {
     try{
+      // await instance({
+      //   method:"POST",
+      //   url:"/signin",
+      //   data:Val
+      // })
         await axios({
             method:'POST',
-            url:'https://ad-post.herokuapp.com/user/signin',
+            url:'http://localhost:9000/user/signin',
             data:Values
         }).then((res)=>{
             if(res.status === 200){
-              window.localStorage.setItem('userMail',res.data.user.email)
+              Authenticate(res.data.token)
+              console.log(res.data.token)
+              window.localStorage.setItem('userMail',res.data.token)
                 navigate(`/home/${res.data.user._id}`)
             }else{
                 console.log('dsfsadds')
