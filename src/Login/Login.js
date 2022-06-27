@@ -40,7 +40,7 @@ function Login() {
       // })
         await axios({
             method:'POST',
-            url:'http://localhost:9000/user/signin',
+            url:'https://ad-post.herokuapp.com/user/signin',
             data:Values
         }).then((res)=>{
             if(res.status === 200){
@@ -50,7 +50,6 @@ function Login() {
                 navigate(`/home/${res.data.user._id}`)
                 setLoading(false)
             }else{
-                console.log('dsfsadds')
                 alert('User not found with these cradentials !')
             }
         })
