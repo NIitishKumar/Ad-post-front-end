@@ -62,7 +62,7 @@ function Login() {
       justifyContent="center"
       alignItems="center"
       minHeight="100vh"
-      style={{width:'70%', paddingLeft:'10%'}}
+      style={{paddingLeft:'15%'}}
     >
       <Grid container justifyContent="center">
         <Grid container lg={4} spacing={3}>
@@ -108,7 +108,7 @@ function Login() {
           </Grid>
         </Grid>
       </Grid>
-      <Typography variant="" ml={5} className="createAd">
+      {/* <Typography variant="" ml={5} className="createAd">
         <Button
         onClick={() => navigate('/allPosts')}
           disableElevation
@@ -120,7 +120,7 @@ function Login() {
         >
           All Posts
         </Button>
-      </Typography>
+      </Typography> */}
     </Box>
   );
 }
