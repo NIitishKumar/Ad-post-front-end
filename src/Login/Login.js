@@ -14,6 +14,8 @@ import axios from "axios";
 import {useNavigate} from 'react-router-dom'
 import { Authenticate } from "../helpers/isAuthenticated";
 import instance from "../helpers/Axios";
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 function Login() {
 
@@ -21,6 +23,7 @@ function Login() {
         email:'',
         password:''
     });
+    const [loading, setLoading] = useState(false)
 
     const navigate = useNavigate()
   const handleChange = (e) => {
@@ -28,6 +31,7 @@ function Login() {
   };
 
   const handleSubmit = async () => {
+    setLoading(true)
     try{
       // await instance({
       //   method:"POST",
@@ -44,6 +48,7 @@ function Login() {
               console.log(res.data.token)
               window.localStorage.setItem('userMail',res.data.token)
                 navigate(`/home/${res.data.user._id}`)
+                setLoading(false)
             }else{
                 console.log('dsfsadds')
                 alert('User not found with these cradentials !')
@@ -64,6 +69,13 @@ function Login() {
       minHeight="100vh"
       style={{paddingLeft:'15%'}}
     >
+      {
+        loading 
+        ? 
+        
+      <CircularProgress />
+      :
+
       <Grid container justifyContent="center">
         <Grid container lg={4} spacing={3}>
           <Grid xs={10} mb={3}>
@@ -112,6 +124,7 @@ function Login() {
           </Grid>
         </Grid>
       </Grid>
+}
       {/* <Typography variant="" ml={5} className="createAd">
         <Button
         onClick={() => navigate('/allPosts')}
