@@ -75,6 +75,9 @@ function Login() {
                 name="email"
                 variant="outlined"
                 label="Email"
+                inputProps={{
+                  autocomplete: "new-password",
+              }}
               />
             </FormControl>
           </Grid>
@@ -87,6 +90,7 @@ function Login() {
                 name="password"
                 variant="outlined"
                 label="Password"
+                autoComplete='new-password'
               />
             </FormControl>
             <a href="/signup">
