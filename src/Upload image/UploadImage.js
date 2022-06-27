@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 // material-ui
 import {
   Button,
@@ -17,6 +19,8 @@ function UploadImage() {
     const [images, setImages] = useState([])
     const [values, setValues] = useState({
     })
+
+    let history = useNavigate()
 
     useEffect( () => {
       try {
@@ -53,6 +57,10 @@ function UploadImage() {
             url:'https://ad-post.herokuapp.com/image',
             method:'post',
             data:formData
+        }).then(res => {
+          if (res.status === 200) {
+            history('/gallery')
+          }
         })
         } catch (error) {
             console.log(error)

@@ -17,6 +17,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import axios from 'axios';
 import instance from '../helpers/Axios';
+import Header from '../Header/Header';
 
 export default function Gallery() {
 
@@ -48,10 +49,13 @@ export default function Gallery() {
 
 
   return (
+    <>
+    <Header />
     <Box
       sx={{
         display: 'flex',
         flexWrap: 'wrap',
+        padding:'4% 6%',
         '& > :not(style)': {
           m: 1,
           width: 128,
@@ -60,12 +64,14 @@ export default function Gallery() {
     >
         {
             images && images.map((x) => {
-                return <Card sx={{ minWidth:300 }}>
+                return <Card sx={{ minWidth:300, maxWidth:400, maxHeight:400, minHeight:400 }}>
 
                 <CardMedia
                   component="img"
                   image={`https://ad-post.herokuapp.com/${x.image}`}
                   alt="Paella dish"
+                  // width='300'
+                  // height='400'
                 />
           
                 <CardContent>
@@ -86,6 +92,7 @@ export default function Gallery() {
         }
             
     </Box>
+    </>
   );
 }
 

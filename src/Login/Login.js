@@ -62,10 +62,11 @@ function Login() {
       justifyContent="center"
       alignItems="center"
       minHeight="100vh"
+      style={{width:'70%', paddingLeft:'10%'}}
     >
       <Grid container justifyContent="center">
         <Grid container lg={4} spacing={3}>
-          <Grid xs={12} mb={3}>
+          <Grid xs={10} mb={3}>
             <FormControl fullWidth>
               <TextField
                 onChange={handleChange}
@@ -77,7 +78,7 @@ function Login() {
               />
             </FormControl>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={10}>
             <FormControl fullWidth>
               <TextField
                 onChange={handleChange}

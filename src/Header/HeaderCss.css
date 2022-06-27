@@ -1,0 +1,19 @@
+.mainHeading{
+    background-color:#58adad ;
+    padding: 1% 5% 1% 1%;
+    display: flex;
+    justify-content: space-between;
+}
+.mainHeading h4{
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family:sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+
