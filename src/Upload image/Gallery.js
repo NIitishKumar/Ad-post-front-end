@@ -48,6 +48,16 @@ export default function Gallery() {
       },[])
 
 
+      const arrayBufferToBase64 = buffer => {
+        let binary = '';
+        let bytes = new Uint8Array(buffer);
+        let len = bytes.byteLength;
+        for (let i = 0; i < len; i++) {
+          binary += String.fromCharCode(bytes[i]);
+        }
+        return window.btoa(binary);
+      };
+
   return (
     <>
     <Header />
@@ -64,15 +74,19 @@ export default function Gallery() {
     >
         {
             images && images.map((x) => {
+
+              // const base64String = btoa(String.fromCharCode(...new Uint8Array(x.img?.data?.data)));
+
                 return <Card sx={{ minWidth:300, maxWidth:400, maxHeight:400, minHeight:400 }}>
 
-                <CardMedia
-                  component="img"
-                  image={`https://ad-post.herokuapp.com/${x.image}`}
-                  alt="Paella dish"
-                  // width='300'
-                  // height='400'
-                />
+               <CardMedia
+                component="img"
+                image={`data:image/png;base64,${arrayBufferToBase64(x.img?.data?.data)}`}
+                alt="Paella dish"
+                // width='300'
+                // height='400'
+              />
+              {console.log(x.img)}
           
                 <CardContent>
                   <Typography variant="body2" color="text.secondary">
